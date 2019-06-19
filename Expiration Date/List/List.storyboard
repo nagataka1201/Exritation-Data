@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fi9-Iu-YYO">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--商品リスト-->
+        <scene sceneID="Kq1-gm-59N">
+            <objects>
+                <tableViewController id="lPh-tK-wgW" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ekL-Sn-hAf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Ae2-px-nlw">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ae2-px-nlw" id="r1U-h6-JLy">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="lPh-tK-wgW" id="jPU-fy-g0O"/>
+                            <outlet property="delegate" destination="lPh-tK-wgW" id="fYF-ln-w9d"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Top" id="Bq2-pf-cYc"/>
+                    <navigationItem key="navigationItem" title="商品リスト" id="Pk1-NQ-h4D">
+                        <barButtonItem key="leftBarButtonItem" title="編集" id="U4F-cC-9cq"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Z6k-jF-15f" colorLabel="IBBuiltInLabel-Blue">
+                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="rMI-HY-erz" kind="modal" modalTransitionStyle="flipHorizontal" id="wfT-hm-bvv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="em8-tI-cp5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2644" y="88.605697151424295"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="SGr-4C-yYq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="qHQ-LJ-4UB" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KSl-5r-HL6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3526" y="-473"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Yo5-0T-cXy">
+            <objects>
+                <viewController id="rMI-HY-erz" customClass="ViewController" customModule="Expiration_Date" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d91-iZ-4Lr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aoV-he-4pL">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="商品追加" id="xKS-OJ-Kpk">
+                                        <barButtonItem key="leftBarButtonItem" title="戻る" id="hsW-Fj-iUq">
+                                            <connections>
+                                                <segue destination="qHQ-LJ-4UB" kind="modal" modalTransitionStyle="partialCurl" id="yTd-D0-8LP"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <rightBarButtonItems>
+                                            <barButtonItem systemItem="add" id="Epo-3j-Ty1">
+                                                <connections>
+                                                    <segue destination="l5W-xr-06J" kind="modal" modalTransitionStyle="coverVertical" id="zNO-kb-zcA"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem id="ppj-2O-viw"/>
+                                            <barButtonItem image="Icon-App-20x20@3x" id="IwF-5i-64f">
+                                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="camera:" destination="rMI-HY-erz" id="KhZ-jE-L7Y"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </rightBarButtonItems>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="S2W-jR-mmj"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J7A-Mn-ebC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3559" y="89"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="6f1-Dq-3YB">
+            <objects>
+                <viewController id="l5W-xr-06J" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2ne-rx-ERL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p7h-qx-2u2">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="新規商品" id="hAJ-Mj-qZZ">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="0Ag-cO-6Ep">
+                                            <connections>
+                                                <segue destination="rMI-HY-erz" kind="show" id="GAC-hA-HKi"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="保存" id="OxB-Q2-B5Y"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="4II-S0-dyD"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cyx-po-1Mt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4494" y="89"/>
+        </scene>
+        <!--Top-->
+        <scene sceneID="bok-im-c1n">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fi9-Iu-YYO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Top" id="mLk-5w-gxU"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fAC-Mg-Gjf">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lPh-tK-wgW" kind="relationship" relationship="rootViewController" id="Dpt-uS-Dql"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xp6-Hz-hWk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1704.8" y="88.605697151424295"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Icon-App-20x20@3x" width="60" height="60"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="zNO-kb-zcA"/>
+        <segue reference="GAC-hA-HKi"/>
+    </inferredMetricsTieBreakers>
+</document>
